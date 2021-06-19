@@ -27,20 +27,15 @@ Screen.prototype.clear=function(){
 }
 
 Screen.prototype.setPixel=function(x,y){
-    // if(x>this.cols) x-=this.cols;
-    // else if (x<0) x+=this.cols;
+    //wrap around edges x axis
     x%=this.cols;
     if(x<0) x+=this.cols;
-    
+    //wrap around edges y axis
     y%=this.rows;
     if(y<0) y+=this.rows;
 
-    // if(y>this.rows) y-=this.rows;
-    // else if (y<0) y+=this.rows;
-
     let i=x+y*(this.cols);
     this.display[i] ^=1;
-
     return !this.display[i];
 }
 Screen.prototype.refresh=function(){

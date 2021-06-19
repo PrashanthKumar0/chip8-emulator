@@ -31,19 +31,20 @@ function Keyboard(){
  
     this.keypressed=[]; //i may have used bin operations
 
+    this.shouldListen=false;
     this.keyDownListener=null;
     addEventListener('keydown',this.onKeyDown.bind(this));
     addEventListener('keyup',this.onKeyUp.bind(this));
 }
 
 Keyboard.prototype.onKeyDown=function(e){
-    let key=String.fromCharCode(e.which).toUpperCase();
+    let key=this.KEY_MAP[String.fromCharCode(e.which).toUpperCase()];
     
-    let idx=this.keypressed.indexOf(this.KEY_MAP[key]);
-    if(idx==-1){
-        this.keypressed.push(this.KEY_MAP[key]);
-        if(this.keyDownListener)    this.keyDownListener(this.KEY_MAP[key]);
-        
+    let idx=this.keypressed.indexOf(key);
+    if(idx===-1){
+        // debugger;
+        this.keypressed.push(key);
+        if(this.keyDownListener && this.shouldListen)    this.keyDownListener(key);    
     }
 }
 
@@ -51,7 +52,8 @@ Keyboard.prototype.onKeyDown=function(e){
 Keyboard.prototype.onKeyUp=function(e){
     let key=String.fromCharCode(e.which).toUpperCase();
     let idx=this.keypressed.indexOf(this.KEY_MAP[key]);
-    if(idx>=0){
+    if(idx!==-1){
+        // debugger;
         this.keypressed.splice(idx,1);
     }
 }

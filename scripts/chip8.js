@@ -148,6 +148,7 @@ Chip8.prototype.cycle=function(){
         clearInterval(this.interval);
         return;
     }
+
     //execute everything 10 times (saw this freecodecamp tutorial using this for speeding up stuff)
     for(let a=0;a<this.speed;a++){   
         if(!this.paused){
@@ -182,7 +183,6 @@ Chip8.prototype.step=function(){
             this.PC+=2; //  since we are dealing with 2 bytes
             //  todo: exception handling on execute
             this.execute(instruction);
-
         // this.screen.refresh(); //! see if its good here    
 }
 
@@ -198,7 +198,7 @@ Chip8.prototype.execute=function(instruction){
     let c=(instruction & 0x000F);
     let bc=instruction & 0x00FF;
     instruction=(instruction & 0x0FFF); //finally the instruction without opcode
-    
+    debugger;
     switch(opcode){
     
         case 0x0://0nnn SYS addr
@@ -393,8 +393,10 @@ Chip8.prototype.execute=function(instruction){
                 case 0x0A://Fx0A // LD Vx, K
                     //Wait for a key press, store the value of the key in Vx.
                     this.paused=true;
+                    this.keyboard.shouldListen=true;
                     this.keyboard.keyDownListener=function(key){
                         this.V[a]=key;
+                        this.keyboard.shouldListen=false;
                         this.paused=false;
                     }.bind(this);
                 break;

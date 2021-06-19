@@ -5,6 +5,7 @@ body{
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+    user-select: none;
 }
 *{
     box-sizing: border-box;
@@ -20,8 +21,21 @@ body{
     border-right-style:double; 
     border-radius: 10px;
     overflow: hidden;
+    /* display: flex;
+    flex-direction: column; */
 }
 canvas{
     background: white;
     display: block;
+}
+select{
+    width:100%;
+    border:none;
+    background: #111;
+    color:green;
+    /* margin:auto; */
+}
+
+option{
+    font-weight: bolder;
 }
