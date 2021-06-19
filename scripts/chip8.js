@@ -174,7 +174,7 @@ Chip8.prototype.step=function(){
             
             //  fetch
             let instruction=((this.ram[this.PC] << 8 ) | this.ram[this.PC+1]);
-
+// debugger;
             //  console.log(instruction);
             if(instruction==undefined){
                 console.log(this);
@@ -198,7 +198,7 @@ Chip8.prototype.execute=function(instruction){
     let c=(instruction & 0x000F);
     let bc=instruction & 0x00FF;
     instruction=(instruction & 0x0FFF); //finally the instruction without opcode
-    debugger;
+    
     switch(opcode){
     
         case 0x0://0nnn SYS addr

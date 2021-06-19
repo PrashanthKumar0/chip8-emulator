@@ -2,7 +2,7 @@
 function Screen(cover){
     this.cover=cover;
     
-    this.rows=31;
+    this.rows=32;
     this.cols=64;
     //todo:select responsive scale value
     this.scale=10; // scale each block by 10 px
