@@ -12,6 +12,8 @@ function Chip8(screen,speaker,keyboard){
     this.ram=new Uint8Array(0xFFF+1); // 4kb ram 
     this.speedEl=document.createElement('input');
     this.speedEl.setAttribute('type','number');
+    this.speedEl.setAttribute('min','1');
+    this.speedEl.setAttribute('max','15');
     this.speedEl.onchange=function(){
         this.speed=Number(this.speedEl.value);
     }.bind(this);

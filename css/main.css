@@ -78,3 +78,23 @@ button.active{
     border-color: orange;
     /* transform: scale(0.9); */
 }
+
+/* hiding corner buttons from select*/
+
+select {
+    -webkit-appearance: none;
+}
+
+/* hiding corner buttons from input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    text-align: center;
+    font-weight: bolder;
+  -moz-appearance: textfield;
+}
