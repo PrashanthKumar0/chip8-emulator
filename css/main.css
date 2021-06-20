@@ -73,6 +73,7 @@ option{
 .key-row > button:disabled{
     opacity: 0.5;
 }
+
 button.active{
     border-color: orange;
     /* transform: scale(0.9); */
