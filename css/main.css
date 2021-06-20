@@ -42,11 +42,13 @@ input
 option{
     font-weight: bolder;
 }
+details{
+    margin:auto;
+}
 #keyPad{
     width:280px;
     height:280px;
     display: flex;
-    margin:auto;
     flex-direction: column;
 }
 
