@@ -21,7 +21,7 @@ function main(){
     
     keypad.forEach(function(el,key){
         el.disabled=true;
-        el.setAttribute('ontouchdown','keyboard.onKeyDown({"which":"'+el.innerText+'".codePointAt(0)});');
+        el.setAttribute('ontouchstart','keyboard.onKeyDown({"which":"'+el.innerText+'".codePointAt(0)});');
         el.setAttribute('onmousedown','keyboard.onKeyDown({"which":"'+el.innerText+'".codePointAt(0)});');
         //could use event listeners?
         document.body.setAttribute('onmouseup','keyboard.keypressed=[];');
