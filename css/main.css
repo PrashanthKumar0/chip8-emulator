@@ -133,10 +133,13 @@ input[type=number] {
     flex-wrap: wrap;
 }
 
+
 #log{
-    font-size: 10px;
+    font-size: 12px;
     margin-right:8px;
-    max-width:100px;
+    max-width:150px;
+    max-height: 100px;
+    overflow-y: hidden;
     text-overflow: ellipsis;
     overflow-wrap: break-word;
 }

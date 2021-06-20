@@ -10,16 +10,26 @@ function Chip8(screen,speaker,keyboard){
     
     
     this.ram=new Uint8Array(0xFFF+1); // 4kb ram 
+    let wrapper=document.createElement('div');
+    wrapper.classList.add('flex');
+    let txt=document.createElement('span');
+    txt.innerText='SPEED : ';
     this.speedEl=document.createElement('input');
-    this.speedEl.classList.add('before');
-    this.speedEl.setAttribute('data-defore','SPEED : ');
+    this.speedEl.style.flex='1';
     this.speedEl.setAttribute('type','number');
     this.speedEl.setAttribute('min','1');
     this.speedEl.setAttribute('max','15');
+    
+
     this.speedEl.onchange=function(){
         this.speed=Number(this.speedEl.value);
     }.bind(this);
-    this.screen.cover.appendChild(this.speedEl); 
+
+    wrapper.appendChild(txt);
+    wrapper.appendChild(this.speedEl);
+    this.screen.cover.appendChild(wrapper);
+    
+    
     this.speed=this.speedEl.value=6;
     this.paused=true;
     this.halted=true; // initially our computer is off (must call reset to turn it on)
