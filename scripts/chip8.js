@@ -37,7 +37,7 @@ Chip8.prototype.loadRom=function(rom,url){
     this.romUrl=url;
     // instructions are loaded from 0x200
     let end=rom.length;
-    for(let i=0;i<end;i++){ 
+    for(let i=0;i<end;i++){
         this.ram[0x200 + i]=rom[i]; // load the rom into ram
     }
 
@@ -112,6 +112,8 @@ Chip8.prototype.reset=function(){
     //*--[/ 2.2  registers]------------------------------------------------------------------------
 
 
+    
+    this.keyboard.keysAvailable=new Set();
     this.screen.clear();
     this.speaker.pause();
 
@@ -368,7 +370,7 @@ Chip8.prototype.execute=function(instruction){
                 case 0x9E://Ex9E
                     //  SKP Vx
                     //PC+=2 next instruction if key with the value of Vx is pressed.
-                    if(this.keyboard.keypressed.includes(this.V[a])){
+                    if(this.keyboard.isPressed(this.V[a])){
                         this.PC+=2; 
                     }
                     //0 in case false 1 on true //not using if
@@ -376,7 +378,7 @@ Chip8.prototype.execute=function(instruction){
 
                 case 0xA1://ExA1 // SKNP Vx
                     //Skip next instruction if key with the value of Vx is not pressed
-                    if(!this.keyboard.keypressed.includes(this.V[a])){
+                    if(!this.keyboard.isPressed(this.V[a])){
                         this.PC+=2;
                     }
                 break;
@@ -394,8 +396,10 @@ Chip8.prototype.execute=function(instruction){
                     //Wait for a key press, store the value of the key in Vx.
                     this.paused=true;
                     this.keyboard.shouldListen=true;
+                    this.keyboard.enableAllKeypad();
                     this.keyboard.keyDownListener=function(key){
                         this.V[a]=key;
+                        this.keyboard.disableAllKeypad();
                         this.keyboard.shouldListen=false;
                         this.paused=false;
                     }.bind(this);

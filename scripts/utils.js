@@ -1,6 +1,9 @@
 function $(el){
     return document.querySelector(el);
 }
+function _(el){
+    return document.querySelectorAll(el);
+}
 function log(msg){
     console.log(msg);
 }
