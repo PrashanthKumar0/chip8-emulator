@@ -11,6 +11,8 @@ function Chip8(screen,speaker,keyboard){
     
     this.ram=new Uint8Array(0xFFF+1); // 4kb ram 
     this.speedEl=document.createElement('input');
+    this.speedEl.classList.add('before');
+    this.speedEl.setAttribute('data-defore','SPEED : ');
     this.speedEl.setAttribute('type','number');
     this.speedEl.setAttribute('min','1');
     this.speedEl.setAttribute('max','15');

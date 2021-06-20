@@ -22,6 +22,7 @@ body{
     border-right-style:double; 
     border-radius: 10px;
     overflow: hidden;
+    position: relative;
     /* display: flex;
     flex-direction: column; */
 }
@@ -50,6 +51,7 @@ details{
     height:280px;
     display: flex;
     flex-direction: column;
+    margin:auto;
 }
 
 
@@ -81,6 +83,20 @@ button.active{
     /* transform: scale(0.9); */
 }
 
+.before{
+    position: relative;
+}
+.before:before{
+    /* content:attr("data-before"); */
+    content: 'SPEED : ';
+    display: inline-block;
+    position: absolute;
+    top:0px;
+    left:0px;
+    width: 100px;
+    height: 100px;
+    background: red;
+}
 /* hiding corner buttons from select*/
 
 select {
@@ -99,4 +115,36 @@ input[type=number] {
     text-align: center;
     font-weight: bolder;
   -moz-appearance: textfield;
+}
+
+#loader{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-size:xx-large;
+    font-variant: small-caps;
+    animation:text-anim 2s linear infinite alternate;
+}
+
+.flex{
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#log{
+    font-size: 10px;
+    margin-right:8px;
+    max-width:100px;
+    text-overflow: ellipsis;
+    overflow-wrap: break-word;
+}
+
+@keyframes text-anim{
+    0%{     color:orangered;    }
+    20%{    color:red;          }
+    50%{    color:blueviolet;   }
+    80%{    color:green;        }
+    100%{    color:orangered;   }
 }

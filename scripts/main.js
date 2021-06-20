@@ -36,7 +36,7 @@ function main(){
 function loadRom(name){
     
     chip8.fetchRom(baseUrl+"/roms/"+name);
-
+    $("#loader").style.display="block";
     // todo : implement onError callback in chip8.js ?
     chip8.onRomLoaded=function(){
         log("rom ( "+ chip8.romUrl+ " ) loaded successfully!")
@@ -45,9 +45,9 @@ function loadRom(name){
             chip8.reset();
             log("booted chip8...");
             log("chip8 running "+progName(chip8.romUrl)); //progName from utils.js
-
+            
             keyboard.disableAllKeypad();
-        
+            $("#loader").style.display="none";
         }catch(e){
             error_log(e);
             error_log("failed booting...\n");            

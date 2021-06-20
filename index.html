@@ -20,6 +20,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CHIP-8 emulator</title>
     <link rel="stylesheet" href="css/main.css">
+
+
+    <script src="scripts/screen.js"></script>
+    <script src="scripts/speaker.js"></script>
+    <script src="scripts/keyboard.js"></script>
+    <!-- <script src="scripts/cpu.js"></script> -->
+    <script src="scripts/chip8.js"></script>
+    
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/main.js"></script>
+
+
+
 </head>
 <body>
 
@@ -44,36 +57,35 @@
            <option value="TRON">TRON</option>
            <option value="WALL">WALL</option>
        </select>
+       
+    <div id="loader">
+        <div>Loading Rom...</div>
+    </div>
     </div>
 
-    <details>
-        <summary>
-            KEYPAD / AVAIBALE KEYS    
-        </summary>
-        <div id="keyPad">
-            <div class="key-row">
-                <button>1</button><button>2</button><button>3</button><button>4</button>
+    <div class="flex">
+        <details>
+            <summary>
+                KEYPAD / AVAIBALE KEYS    
+            </summary>
+            <div id="keyPad">
+                <div class="key-row">
+                    <button>1</button><button>2</button><button>3</button><button>4</button>
+                </div>
+                <div class="key-row">
+                    <button>Q</button><button>W</button><button>E</button><button>R</button>
+                </div>
+                <div class="key-row">
+                    <button>A</button><button>S</button><button>D</button><button>F</button>
+                </div>
+                <div class="key-row">
+                    <button>Z</button><button>X</button><button>C</button><button>V</button>
+                </div>
             </div>
-            <div class="key-row">
-                <button>Q</button><button>W</button><button>E</button><button>R</button>
-            </div>
-            <div class="key-row">
-                <button>A</button><button>S</button><button>D</button><button>F</button>
-            </div>
-            <div class="key-row">
-                <button>Z</button><button>X</button><button>C</button><button>V</button>
-            </div>
-        </div>
-    </details>
+        </details>
+        <div id="log"></div>
+    </div>
 
-    <script src="scripts/screen.js"></script>
-    <script src="scripts/speaker.js"></script>
-    <script src="scripts/keyboard.js"></script>
-    <!-- <script src="scripts/cpu.js"></script> -->
-    <script src="scripts/chip8.js"></script>
-    
-    <script src="scripts/utils.js"></script>
-    <script src="scripts/main.js"></script>
 
 </body>
 </html>
