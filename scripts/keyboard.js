@@ -74,8 +74,7 @@ function Keyboard(keypad){
 Keyboard.prototype.onKeyDown=function(e){
     let key=this.KEY_MAP[String.fromCharCode(e.which).toUpperCase()];
     let idx=this.keypressed.indexOf(key);
-    if(idx===-1 && key){
-        // debugger;
+    if(idx===-1 && key!==undefined){        
         this.keypad[this.KEYPAD_MAP[key]].classList.add('active');
         this.keypressed.push(key);
         if(this.keyDownListener && this.shouldListen)    this.keyDownListener(key);    

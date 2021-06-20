@@ -9,7 +9,7 @@ function Screen(cover){
     this.width=this.cols*this.scale;
     this.height=this.rows*this.scale;
 
-    this.pixelColor='green';
+    this.pixelColor='orangered';
 
     this.canvas=document.createElement('canvas');
     this.ctx=this.canvas.getContext('2d');

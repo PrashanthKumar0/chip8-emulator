@@ -10,7 +10,13 @@ function Chip8(screen,speaker,keyboard){
     
     
     this.ram=new Uint8Array(0xFFF+1); // 4kb ram 
-
+    this.speedEl=document.createElement('input');
+    this.speedEl.setAttribute('type','number');
+    this.speedEl.onchange=function(){
+        this.speed=Number(this.speedEl.value);
+    }.bind(this);
+    this.screen.cover.appendChild(this.speedEl); 
+    this.speed=this.speedEl.value=6;
     this.paused=true;
     this.halted=true; // initially our computer is off (must call reset to turn it on)
 }
@@ -122,7 +128,7 @@ Chip8.prototype.reset=function(){
 
 
     this.fps=60; //60hz
-    this.speed=6;
+    this.speed=this.speedEl.value=6;
     if(this.interval)clearInterval(this.interval);
     this.interval=setInterval(this.cycle.bind(this),1000/this.fps);
 }

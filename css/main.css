@@ -6,7 +6,7 @@ body{
     align-items: center;
     min-height: 100vh;
     user-select: none;
-    color:green;
+    color:orangered;
 }
 *{
     box-sizing: border-box;
@@ -17,7 +17,7 @@ body{
     /* box-shadow: inset -2px -2px 4px #000,
     inset 2px 2px 4px #444,
     4px 4px 20px #000; */
-    border:6px solid green;
+    border:6px solid orangered;
     border-left-style:double;
     border-right-style:double; 
     border-radius: 10px;
@@ -26,14 +26,16 @@ body{
     flex-direction: column; */
 }
 canvas{
-    background: white;
+    background: #111;
     display: block;
+    width:100%;
 }
-select{
+input
+,select{
     width:100%;
     border:none;
     background: #111;
-    color:green;
+    color:orangered;
     /* margin:auto; */
 }
 
@@ -44,6 +46,7 @@ option{
     width:280px;
     height:280px;
     display: flex;
+    margin:auto;
     flex-direction: column;
 }
 
@@ -57,14 +60,14 @@ option{
 .key-row > button{
     flex:1;
     background: #000;
-    color:green;
+    color:orangered;
     font-size: 20px;
     outline: none;
-    border:1px solid green;
+    border:1px solid orangered;
 }
 
 .key-row > button:active{
-    transform: scale(0.9);
+    transform: scale(0.85);
 }
 
 .key-row > button:disabled{
@@ -72,5 +75,6 @@ option{
 }
 
 button.active{
-    transform: scale(0.9);
+    border-color: orange;
+    /* transform: scale(0.9); */
 }
