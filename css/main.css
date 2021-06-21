@@ -165,3 +165,19 @@ input[type=number] {
     color:white;
     text-decoration: none;
 }
+
+#toggleBtn{
+    position:fixed;
+    top:0px;
+    left:0px;
+    color:#fff;
+    overflow: hidden;
+    font-size: 25px;
+    background: orangered;
+    width:40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:4px;
+}

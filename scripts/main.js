@@ -14,6 +14,10 @@ function main(){
 
     chip8=new Chip8(screen,speaker,keyboard);
     $('#romSelection').focus();
+    $('#romSelection').childNodes.forEach(function(el){
+        el.value=baseUrl+"/roms/"+el.value;
+    });
+    
     $('#romSelection').onchange=function(e){
         e.target.blur();
         loadRom(e.target.value);
@@ -33,9 +37,8 @@ function main(){
 
 
 
-function loadRom(name){
-    
-    chip8.fetchRom(baseUrl+"/roms/"+name);
+function loadRom(url){
+    chip8.fetchRom(url);
     $("#loader").style.display="block";
     // todo : implement onError callback in chip8.js ?
     chip8.onRomLoaded=function(){
