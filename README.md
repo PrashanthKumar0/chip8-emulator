@@ -7,3 +7,5 @@ A chip 8 emulator made on web
 - [reference for debugging](https://taniarascia.github.io/chip8/)
 > I used taniarscia's chip8 emulator to compare and debug my emulator.
 
+# Inspiration 
+- https://github.com/paul-caron/lmc
