@@ -18,7 +18,7 @@ function Chip8(screen,speaker,keyboard){
     this.speedEl.style.flex='1';
     this.speedEl.setAttribute('type','number');
     this.speedEl.setAttribute('min','1');
-    this.speedEl.setAttribute('max','15');
+    // this.speedEl.setAttribute('max','15');
     
 
     this.speedEl.onchange=function(){

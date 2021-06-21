@@ -33,6 +33,7 @@ canvas{
 }
 input
 ,select{
+    outline: none;
     width:100%;
     border:none;
     background: #111;
@@ -150,4 +151,16 @@ input[type=number] {
     50%{    color:blueviolet;   }
     80%{    color:green;        }
     100%{    color:orangered;   }
+}
+
+.rib{
+    position: fixed;
+    top:0px;
+    right:0px;
+    transform-origin: 50% 0%;
+    padding:60px 80px 5px 80px;
+    transform:translate(50%,0%) rotate(45deg);
+    background: orangered;
+    color:white;
+    text-decoration: none;
 }
