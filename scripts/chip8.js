@@ -30,7 +30,7 @@ function Chip8(screen,speaker,keyboard){
     this.screen.cover.appendChild(wrapper);
     
     
-    this.speed=this.speedEl.value=6;
+    this.speed=this.speedEl.value=8;
     this.paused=true;
     this.halted=true; // initially our computer is off (must call reset to turn it on)
 }
@@ -142,7 +142,7 @@ Chip8.prototype.reset=function(){
 
 
     this.fps=60; //60hz
-    this.speed=this.speedEl.value=6;
+    this.speed=this.speedEl.value=8;
     if(this.interval)clearInterval(this.interval);
     this.interval=setInterval(this.cycle.bind(this),1000/this.fps);
 }
