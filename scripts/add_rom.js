@@ -36,7 +36,7 @@ function add_rom_main(){
 
 
 function add_rom(url){
-    let name=progName(url);
+    let name=progName(url).split(".")[0];
     let el=document.createElement('option');
     el.value=url;
     el.innerText=name;
