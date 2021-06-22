@@ -29,7 +29,7 @@ function add_rom_main(){
         });
         log('\n'+items.length+" rom(s) found !\n")
     }catch(e){
-        console.log('no roms saved');
+        log('no roms saved');
     }
 
 }
