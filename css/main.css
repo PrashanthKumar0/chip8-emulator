@@ -5,7 +5,13 @@ body{
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+  
     user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-touch-callout: none;
+
     color:orangered;
 }
 *{
