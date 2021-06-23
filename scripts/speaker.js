@@ -1,7 +1,9 @@
 function Speaker(freq=440){
     this.freq=freq||440;
-    
-    this.ctx=new AudioContext() || new webkitAudioContext();
+    //to make ios happy
+    window.AudioContext = window.AudioContext||window.webkitAudioContext;
+   
+    this.ctx=new AudioContext();
     this.gain=this.ctx.createGain();
     this.oscillator=this.ctx.createOscillator();
     this.oscillator.frequency.value=freq;
