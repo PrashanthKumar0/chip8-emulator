@@ -1,4 +1,4 @@
-# chip8-emu
+# chip8-emulator
 A chip 8 emulator made on web
 
 # references 
